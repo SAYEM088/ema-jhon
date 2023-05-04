@@ -3,7 +3,7 @@ import './Cart.css'
 const Cart = ({Cart}) => {
     // const cart =props.cart;
     // const {cart}= props;
-    console.log(Cart);
+    // console.log(Cart);
     let totalPrice = 0;
     let totalShipping =0;
     let  quantity = 0;
@@ -18,6 +18,10 @@ const Cart = ({Cart}) => {
     }
     const tax = totalPrice *7 /100;
     const grandTotal = totalPrice + totalShipping + tax ;
+    const clearCart=()=>{
+        localStorage.removeItem('shopping-cart');
+        location.reload();
+    }
     return (
         <div className='cart'>
              <h2>Order Summery</h2>
@@ -26,6 +30,7 @@ const Cart = ({Cart}) => {
                 <p>Total Shipping: <b> $ {totalShipping}</b></p>
                 <p>Tax: <b> $ {tax.toFixed(2)}</b></p>
                <h5>Grand Total: <b> $ {grandTotal.toFixed(2)}</b></h5>
+               <button className='clearCart'onClick={()=>clearCart()} >Clear Cart</button>
         </div>
     );
 };

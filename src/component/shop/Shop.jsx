@@ -16,10 +16,10 @@ const Shop = () => {
         const storedCart = getShoppingCart();
         const savedCart =[];
         // step 1: get id
-        console.log(storedCart) 
+        // console.log(storedCart) 
         for(const id in storedCart){
             // step 2 get the product by using id
-            console.log(id)
+            // console.log(id)
             const  addedProduct = products.find(product => product.id === id)
             if(addedProduct){
                 const quantity =storedCart[id];
